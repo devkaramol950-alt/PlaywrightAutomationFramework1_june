@@ -3,6 +3,8 @@ import { LoginPage} from "./loginPage";
 import { DashboardPage } from "./dashboardPage";
 import { pimPage } from "./pimPage";
 import { Helper } from "../utils/helper";
+import { AdminPage } from "./adminPage";
+
 
 
 export class PageManager{
@@ -11,6 +13,7 @@ export class PageManager{
     readonly dashboardPage: DashboardPage;
     readonly pimPage:pimPage
     readonly helper:Helper;
+    readonly adminPage:AdminPage;
     
 
     constructor(page: Page){
@@ -19,5 +22,6 @@ export class PageManager{
         this.dashboardPage = new DashboardPage(page);
         this.pimPage = new pimPage(page);
         this.helper = new Helper();
+        this.adminPage= new AdminPage(page);
     }
 }

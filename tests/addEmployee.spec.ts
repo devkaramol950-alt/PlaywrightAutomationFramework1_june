@@ -1,14 +1,12 @@
 import{test,expect} from '@playwright/test'
 import { PageManager } from '../pages/pageManager';
 
-
-
 test('should add a new employee successfully',async ({page})=>{
 
     const pm = new PageManager(page)
     
     await pm.loginPage.gotoLoginPage();
-    await pm.loginPage.login('admin','admin123');
+    await pm.loginPage.login('Admin','admin123');
 
     await expect(pm.dashboardPage.dashboardHidding).toBeVisible();
    
@@ -19,6 +17,6 @@ test('should add a new employee successfully',async ({page})=>{
     await expect(pm.pimPage.personalDetailHeading).toBeVisible();
 
     await pm.pimPage.addEmployee(userData.firstName,userData.middleName);
-
 })
+
 
